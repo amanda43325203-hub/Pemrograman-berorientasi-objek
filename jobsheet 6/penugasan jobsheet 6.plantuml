@@ -1,0 +1,27 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Senjata {
+  +nama: String
+  +serang(): void
+  +info_status(): String
+  +info_nama(): String
+}
+
+class Pedang {
+  +panjang_bilah: float
+  +daya_tahan: int
+  +serang(): void
+  +info_status(): String
+}
+
+class Panah {
+  -ammo: int
+  +serang(): void
+  +info_status(): String
+}
+
+Senjata <|-- Pedang
+Senjata <|-- Panah
+
+@enduml

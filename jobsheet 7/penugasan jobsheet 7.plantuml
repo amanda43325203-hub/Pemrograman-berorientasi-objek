@@ -1,0 +1,29 @@
+@startuml
+
+class InventarisBarang {
+
+    - _items : dict
+
+    + __init__()
+    + tambah_barang(kode : str, jumlah : int)
+    + ambil_barang(kode : str, jumlah : int)
+    + cek_stok(kode : str)
+}
+
+note right of InventarisBarang
+tambah_barang():
+- Menambahkan barang baru
+- Raise KeyError jika kode sudah ada
+- Menangani ValueError untuk jumlah tidak valid
+
+ambil_barang():
+- Mengurangi stok barang
+- Menangani KeyError jika barang tidak ditemukan
+- Raise ValueError jika stok tidak cukup
+
+cek_stok():
+- Menggunakan try-except-else-finally
+- Menampilkan stok barang
+end note
+
+@enduml
